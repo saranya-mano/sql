@@ -55,6 +55,10 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 ```
 Your answer...
+
+Type 1 slowly changing dimensions (SCD) is used for data when we want to overwrite old values. This makes sense for data where only the current information is needed, like email addresses, phone numbers, etc. If we choose Type 1 for customer addresses, as customers update their address, the new address will overwrite the old one. 
+
+Type 2 SCD is used for data where we want to preseve the historical changes with new rows. This can be useful for prices, for example. If we choose Type 2 for customer addresses, then all addresses will be recorded as separate rows with start and end dates.
 ```
 
 ***
